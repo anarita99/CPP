@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
+#    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/26 11:43:54 by adores            #+#    #+#              #
-#    Updated: 2026/02/26 16:08:15 by adores           ###   ########.fr        #
+#    Updated: 2026/04/30 12:17:57 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME): $(OBJS)
 	$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp 
-	$(CPP) $(CFLAGS) $< -o $@
+	$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
@@ -34,5 +34,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re
