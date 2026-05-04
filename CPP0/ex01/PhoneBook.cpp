@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/04/30 12:19:22 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/04 14:01:50 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 void PhoneBook:: add()
 {
-	Contact new_contact;
 	std::cout << "First name: ";
-	std::cin >> new_contact.first_name;
+	std::getline(std::cin, contact[i].first_name);
 	std::cout << "Last name: ";
-	std::cin >> new_contact.last_name;
+	std::getline(std::cin, contact[i].last_name);
 	std::cout << "Nickname: ";
-	std::getline(std::cin, new_contact.nickname);
+	std::getline(std::cin, contact[i].nickname);
 	std::cout << "Phone number: ";
-	std::cin >> new_contact.phone_number;
+	std::getline(std::cin, contact[i].phone_number);
 	std::cout << "Darkest secret: ";
-	std::getline(std::cin, new_contact.darkest_secret);
-	
+	std::getline(std::cin, contact[i].darkest_secret);
+	i++;
 }
 
 void PhoneBook::search()
 {
 	std::cout << "Searching number"<< std:: endl;
+	std::cout << contact[0].first_name << std:: endl;
+	std::cout << contact[0].last_name << std:: endl;
+	std::cout << contact[0].nickname << std:: endl;
+	
 }
 
 void PhoneBook::exit()
@@ -42,10 +45,11 @@ int main()
 {
 	PhoneBook contact1;
 	std:: string input;
+	contact1.i = 0;
 	while(1)
 	{
 		std:: cout << "> Please enter ADD, SEARCH or EXIT: " << std:: endl;
-		std:: cin >> input;
+		std::getline(std::cin, input);
 		if(input == "ADD")
 			contact1.add();
 		else if(input == "SEARCH")
@@ -57,6 +61,7 @@ int main()
 		}
 		else
 			std:: cout << "Not a valid word. " << std:: endl;
+		std::cout << contact1.i << std::endl;
 	}
 	return (0);
 	

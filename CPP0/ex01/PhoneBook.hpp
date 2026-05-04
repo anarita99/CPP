@@ -15,6 +15,7 @@ class Contact {
 
 class PhoneBook{
 	public:
+		int	i;
 		Contact contact[8];
 		void add();
 		void search();
