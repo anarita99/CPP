@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/04 14:01:50 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/05 15:03:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,22 @@ void PhoneBook:: add()
 
 void PhoneBook::search()
 {
-	std::cout << "Searching number"<< std:: endl;
-	std::cout << contact[0].first_name << std:: endl;
-	std::cout << contact[0].last_name << std:: endl;
-	std::cout << contact[0].nickname << std:: endl;
+	std::string answer;
+	int j = 0;
+	std::cout << "What number you want to search?"<< std:: endl;
+	std::getline(std::cin, answer);
+	while(j <= 8)
+	{
+		if(answer == contact[j].phone_number)
+		{
+			std::cout << "First name: "<< contact[j].first_name << std:: endl;
+			std::cout << "Last name: "<< contact[j].last_name << std:: endl;
+			std::cout <<"Nickname: "<< contact[j].nickname << std:: endl;
+			std::cout <<"Phone number: "<< contact[j].phone_number << std:: endl;
+			std::cout <<"Darkest secret: "<< contact[j].darkest_secret << std:: endl;
+		}
+		j++;
+	}
 	
 }
 
@@ -43,25 +55,25 @@ void PhoneBook::exit()
 
 int main()
 {
-	PhoneBook contact1;
+	PhoneBook contacts;
 	std:: string input;
-	contact1.i = 0;
+	contacts.i = 0;
 	while(1)
 	{
 		std:: cout << "> Please enter ADD, SEARCH or EXIT: " << std:: endl;
 		std::getline(std::cin, input);
 		if(input == "ADD")
-			contact1.add();
+			contacts.add();
 		else if(input == "SEARCH")
-			contact1.search();
+			contacts.search();
 		else if(input == "EXIT")
 		{
-			contact1.exit();
+			contacts.exit();
 			break ;
 		}
 		else
 			std:: cout << "Not a valid word. " << std:: endl;
-		std::cout << contact1.i << std::endl;
+		std::cout << contacts.i << std::endl;
 	}
 	return (0);
 	
