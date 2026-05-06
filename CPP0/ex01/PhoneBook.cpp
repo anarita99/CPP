@@ -3,48 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/05 15:03:27 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/06 15:55:03 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 void PhoneBook:: add()
 {
+	if(i == 9)
+		i = 0;
+	std:: string input;
+	
 	std::cout << "First name: ";
-	std::getline(std::cin, contact[i].first_name);
+	std::getline(std::cin, input);
+	contact[i].edit_first_name(input); 
 	std::cout << "Last name: ";
-	std::getline(std::cin, contact[i].last_name);
+	std::getline(std::cin, input);
+	contact[i].edit_last_name(input);
 	std::cout << "Nickname: ";
-	std::getline(std::cin, contact[i].nickname);
+	std::getline(std::cin, input);
+	contact[i].edit_nickname(input);
 	std::cout << "Phone number: ";
-	std::getline(std::cin, contact[i].phone_number);
+	std::getline(std::cin, input);
+	contact[i].edit_phone_number(input);
 	std::cout << "Darkest secret: ";
-	std::getline(std::cin, contact[i].darkest_secret);
+	std::getline(std::cin, input);
+	contact[i].edit_darkest_secret(input);
 	i++;
 }
 
 void PhoneBook::search()
 {
 	std::string answer;
-	int j = 0;
 	std::cout << "What number you want to search?"<< std:: endl;
 	std::getline(std::cin, answer);
-	while(j <= 8)
-	{
-		if(answer == contact[j].phone_number)
-		{
-			std::cout << "First name: "<< contact[j].first_name << std:: endl;
-			std::cout << "Last name: "<< contact[j].last_name << std:: endl;
-			std::cout <<"Nickname: "<< contact[j].nickname << std:: endl;
-			std::cout <<"Phone number: "<< contact[j].phone_number << std:: endl;
-			std::cout <<"Darkest secret: "<< contact[j].darkest_secret << std:: endl;
-		}
-		j++;
-	}
 	
 }
 
