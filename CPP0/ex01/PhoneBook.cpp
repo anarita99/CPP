@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/07 12:05:14 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/07 14:05:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void PhoneBook:: add()
 	std::getline(std::cin, input);
 	contact[i].edit_darkest_secret(input);
 	i++;
+	added_contacts++;
 }
 
 /*Display the saved contacts as a list of 4 columns: index, first name, last
@@ -42,16 +43,36 @@ it must be truncated and the last displayable character must be replaced by a
 dot (’.’).*/
 void PhoneBook::search()
 {
-	i = 0;
-	Contact contact;
-	while(i < 8)
+	int j = 0;
+	while(j < i)
 	{
-
-		i++;
+		std::cout << j << std::setw(10) << " | ";
+		std::cout << contact[j].get_first() << std::setw(10) << " | ";
+		std::cout << contact[j].get_last() << std::setw(10) << " | ";
+		std::cout << contact[j].get_nick() << std::setw(10) << " | ";
+		std::cout << contact[j].get_phone() << std::setw(10) << " | " << std:: endl;
+		j++;
 	}
 	std::string answer;
-	std::cout << "What index do you want?"<< std:: endl;
-	std::getline(std::cin, answer);
+	int num;
+	if(added_contacts == 0)
+		std::cout << "No added contacts." << std::endl;
+	else
+	{
+		std::cout << "What index do you want?"<< std:: endl;
+		std::getline(std::cin, answer);
+		num = atoi(answer.c_str());
+		if (num >= 0 && num < 8)
+		{
+			std::cout << "First name: "<< contact[num].get_first() << std::endl;
+			std::cout << "Last name: "<< contact[num].get_last() << std::endl;
+			std::cout << "Nickname: "<< contact[num].get_nick() << std::endl;
+			std::cout << "Phone number: "<< contact[num].get_phone() << std::endl;
+			std::cout << "Darkest secret: "<< contact[num].get_dark() << std::endl;
+		}
+		else
+			std::cout << "Index out of range." << std::endl;
+	}
 }
 
 void PhoneBook::exit()
@@ -64,6 +85,7 @@ int main()
 	PhoneBook contacts;
 	std:: string input;
 	contacts.i = 0;
+	contacts.added_contacts = 0;
 	while(1)
 	{
 		std:: cout << "> Please enter ADD, SEARCH or EXIT: " << std:: endl;
@@ -78,7 +100,6 @@ int main()
 				contacts.add();
 			}
 		}
-			
 		else if(input == "SEARCH")
 			contacts.search();
 		else if(input == "EXIT")
@@ -88,7 +109,7 @@ int main()
 		}
 		else
 			std:: cout << "Not a valid word. " << std:: endl;
-		std::cout << contacts.i << std::endl;
+		//std::cout << contacts.i << std::endl;
 	}
 	return (0);
 	

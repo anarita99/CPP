@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 14:17:58 by adores            #+#    #+#             */
-/*   Updated: 2026/05/07 11:57:09 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/07 13:24:51 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void Contact:: edit_darkest_secret(std:: string dark)
 	darkest_secret = dark;
 }
 
-/*std::string Contact:: get_first()
+std::string Contact:: get_first()
 {
 	return first_name;
 }
@@ -61,4 +61,4 @@ std::string Contact:: get_phone()
 std::string Contact:: get_dark()
 {
 	return darkest_secret;
-}*/
+}
