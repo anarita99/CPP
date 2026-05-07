@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 14:17:58 by adores            #+#    #+#             */
-/*   Updated: 2026/05/06 14:39:15 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/07 11:57:09 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,33 @@ void Contact:: edit_phone_number(std:: string number)
 {
 	phone_number = number;
 }
+
 void Contact:: edit_darkest_secret(std:: string dark)
 {
 	darkest_secret = dark;
 }
+
+/*std::string Contact:: get_first()
+{
+	return first_name;
+}
+
+std::string Contact:: get_last()
+{
+	return last_name;
+}
+
+std::string Contact:: get_nick()
+{
+	return nickname;
+}
+
+std::string Contact:: get_phone()
+{
+	return phone_number;
+}
+
+std::string Contact:: get_dark()
+{
+	return darkest_secret;
+}*/

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 14:05:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/06 14:37:16 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/07 11:41:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ class Contact {
 		void	edit_nickname(std:: string nick);
 		void	edit_phone_number(std:: string number);
 		void	edit_darkest_secret(std:: string dark);
+		std::string	get_first();
+		std::string	get_last();
+		std::string	get_nick();
+		std::string	get_phone();
+		std::string	get_dark();
 };
 
 
