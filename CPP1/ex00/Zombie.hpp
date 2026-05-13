@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 14:53:50 by adores            #+#    #+#             */
-/*   Updated: 2026/05/12 14:56:08 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/13 13:59:30 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ class Zombie{
 	private:
 		std::string name;
 	public:
+		Zombie();
+		~Zombie();
 		void announce(void);
-}
+		std::string get_name(void);
+		void set_name(std::string zombie_name);
+};
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif
