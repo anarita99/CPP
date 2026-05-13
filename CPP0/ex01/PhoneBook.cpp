@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/13 12:52:57 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/13 16:24:28 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,15 @@ void PhoneBook::search()
 		std::cout << "No added contacts." << std::endl;
 	else
 	{
-		std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
-		std::getline(std::cin, answer);
-		exit_eof();
+		do
+		{
+			std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
+			std::getline(std::cin, answer);
+			exit_eof();
+		if(answer.empty())
+			std::cout << "Empty field. Try again." << std::endl;
+		}
+		while(answer.empty());
 		num = atoi(answer.c_str());
 		if (num >= 0 && num < 8)
 		{
