@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/12 14:26:08 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/13 12:52:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+
+static void exit_eof(void)
+{
+	if (std::cin.eof())
+	{
+		std::cout << "\nExiting program." << std::endl;
+		std::exit(0);
+	}
+}
 
 void PhoneBook:: add()
 {
@@ -20,6 +29,7 @@ void PhoneBook:: add()
 	{
 		std::cout << "First name: ";
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
 	}
@@ -29,6 +39,7 @@ void PhoneBook:: add()
 	{
 		std::cout << "Last name: ";
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
 	}
@@ -38,6 +49,7 @@ void PhoneBook:: add()
 	{
 		std::cout << "Nickname: ";
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
 	}
@@ -47,6 +59,7 @@ void PhoneBook:: add()
 	{
 		std::cout << "Phone number: ";
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
 	}
@@ -56,6 +69,7 @@ void PhoneBook:: add()
 	{
 		std::cout << "Darkest secret: ";
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
 	}
@@ -97,6 +111,7 @@ void PhoneBook::search()
 	{
 		std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
 		std::getline(std::cin, answer);
+		exit_eof();
 		num = atoi(answer.c_str());
 		if (num >= 0 && num < 8)
 		{
@@ -126,6 +141,7 @@ int main()
 	{
 		std:: cout << "> Please enter ADD, SEARCH or EXIT: " << std:: endl;
 		std::getline(std::cin, input);
+		exit_eof();
 		if(input == "ADD")
 		{
 			if(contacts.i < 8)
@@ -145,7 +161,6 @@ int main()
 		}
 		else
 			std:: cout << "Not a valid word. " << std:: endl;
-		//std::cout << contacts.i << std::endl;
 	}
 	return (0);
 	
