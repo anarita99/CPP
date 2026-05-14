@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 10:41:35 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 10:43:39 by adores           ###   ########.fr       */
+/*   Created: 2026/05/14 11:40:02 by adores            #+#    #+#             */
+/*   Updated: 2026/05/14 12:01:06 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>
 
-std:: string	print(std::string input)
-{
-	std:: size_t i;
-	for (i = 0; i < input.length(); i++)
-		input[i] = toupper(input[i]);
-	return(input);
-}
+class Zombie{
+	private:
+		std::string name;
+	public:
+		Zombie();
+		~Zombie();
+		void announce(void);
+		std::string get_name(void);
+		void set_name(std::string zombie_name);
+};
 
-int	main(int ac, char **av)
-{
-	
-	if(ac == 1)
-		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std:: endl;
-	else if (ac >= 2)
-	{
-		for(int i = 1; i < ac; i++)
-			std:: cout << print(av[i]);
-		std:: cout << "\n";
-	}
-	return (0);
-}
+Zombie* newZombie(std::string name);
+
+#endif
