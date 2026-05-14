@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:40:02 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 12:01:06 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/14 14:41:19 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Zombie{
 		void set_name(std::string zombie_name);
 };
 
-Zombie* newZombie(std::string name);
+Zombie* zombieHorde(int N, std::string name);
+
+
 
 #endif

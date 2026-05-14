@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 14:08:07 by adores            #+#    #+#             */
-/*   Updated: 2026/05/07 13:59:40 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/14 14:17:37 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class PhoneBook{
 		void add();
 		void search();
 		void exit();
+		void print_contacts();
 };
 
 #endif

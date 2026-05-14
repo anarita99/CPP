@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 10:47:43 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/14 14:21:19 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void exit_eof(void)
 {
 	if (std::cin.eof())
 	{
-		std::cout << "\nExiting program." << std::endl;
+		std::cout << "Exiting program." << std::endl;
 		std::exit(0);
 	}
 }
@@ -79,12 +79,12 @@ void PhoneBook:: add()
 	added_contacts++;
 }
 
-void PhoneBook::search()
+void PhoneBook::print_contacts()
 {
 	int j = 0;
-	std::cout << " -------------------------------------------" << std::endl;;
+	std::cout << " -------------------------------------------" << std::endl;
 	std::cout << "|  Index   |First name|Last name | Nickname |" << std::endl;
-	std::cout << " -------------------------------------------" << std::endl;;
+	std::cout << " -------------------------------------------" << std::endl;
 	while(j < i)
 	{
 		std::cout << "|" << std::setw(10) << j;
@@ -103,32 +103,46 @@ void PhoneBook::search()
 		j++;
 	}
 	std::cout << " -------------------------------------------" << std::endl;
+}
+
+void PhoneBook::search()
+{
+	print_contacts();
 	std::string answer;
 	int num;
 	if(added_contacts == 0)
 		std::cout << "No added contacts." << std::endl;
 	else
 	{
-		do
+		while(1)
 		{
-			std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
-			std::getline(std::cin, answer);
-			exit_eof();
-			if(answer.empty())
-				std::cout << "Empty field. Try again." << std::endl;
+			do
+			{
+				std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
+				std::getline(std::cin, answer);
+				exit_eof();
+				if(answer.empty())
+					std::cout << "Empty field. Try again." << std::endl;
+			}
+			while(answer.empty());
+			num = atoi(answer.c_str());
+			if(num >= added_contacts)
+			{
+				std::cout << "Index not correct." << std::endl;
+				continue;
+			}
+			else if (num >= 0 && num < 8)
+			{
+				std::cout << "First name: "<< contact[num].get_first() << std::endl;
+				std::cout << "Last name: "<< contact[num].get_last() << std::endl;
+				std::cout << "Nickname: "<< contact[num].get_nick() << std::endl;
+				std::cout << "Phone number: "<< contact[num].get_phone() << std::endl;
+				std::cout << "Darkest secret: "<< contact[num].get_dark() << std::endl;
+				break;
+			}
+			else
+				std::cout << "Index out of range or not correct." << std::endl;
 		}
-		while(answer.empty());
-		num = atoi(answer.c_str());
-		if (num >= 0 && num < 8)
-		{
-			std::cout << "First name: "<< contact[num].get_first() << std::endl;
-			std::cout << "Last name: "<< contact[num].get_last() << std::endl;
-			std::cout << "Nickname: "<< contact[num].get_nick() << std::endl;
-			std::cout << "Phone number: "<< contact[num].get_phone() << std::endl;
-			std::cout << "Darkest secret: "<< contact[num].get_dark() << std::endl;
-		}
-		else
-			std::cout << "Index out of range or not correct." << std::endl;
 	}
 }
 
