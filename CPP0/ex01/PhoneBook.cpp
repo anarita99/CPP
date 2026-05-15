@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 14:21:19 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/15 11:36:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void PhoneBook::search()
 		{
 			do
 			{
-				std::cout << "\nWhat index do you want?"<< std:: endl << "> ";
+				std::cout << "What index do you want?"<< std:: endl << "> ";
 				std::getline(std::cin, answer);
 				exit_eof();
 				if(answer.empty())
