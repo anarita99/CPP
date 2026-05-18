@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/15 11:36:01 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/18 15:32:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void PhoneBook:: add()
 	while(input.empty());
 	contact[i].edit_darkest_secret(input);
 	i++;
-	added_contacts++;
+	if (added_contacts < 8)
+		added_contacts++;
 }
 
 void PhoneBook::print_contacts()
@@ -85,7 +86,7 @@ void PhoneBook::print_contacts()
 	std::cout << " -------------------------------------------" << std::endl;
 	std::cout << "|  Index   |First name|Last name | Nickname |" << std::endl;
 	std::cout << " -------------------------------------------" << std::endl;
-	while(j < i)
+	while(j < added_contacts)
 	{
 		std::cout << "|" << std::setw(10) << j;
 		if(contact[j].get_first().length() > 10)
@@ -125,7 +126,8 @@ void PhoneBook::search()
 					std::cout << "Empty field. Try again." << std::endl;
 			}
 			while(answer.empty());
-			num = atoi(answer.c_str());
+			std::istringstream iss(answer);
+			iss >> num;
 			if(num >= added_contacts)
 			{
 				std::cout << "Index not correct." << std::endl;

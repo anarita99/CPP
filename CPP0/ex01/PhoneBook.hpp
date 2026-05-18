@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 14:08:07 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 14:17:37 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/18 12:33:16 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define PHONEBOOK_H
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <iomanip>
-#include <cstring>
 #include <cstdlib>
 #include "Contact.hpp"
 
