@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:38:16 by adores            #+#    #+#             */
-/*   Updated: 2026/05/15 11:25:53 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/18 15:50:13 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 Zombie* zombieHorde(int N, std::string name)
 {
-	if(N == 0)
-		return NULL;
 	Zombie* horde = new Zombie[N];
 	int i = 0;
 	while(i < N)

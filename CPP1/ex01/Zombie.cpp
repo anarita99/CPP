@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:39:57 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 14:45:41 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/18 15:51:22 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,3 @@ void Zombie::announce(void)
 {
 	std::cout << get_name() << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
-
-// Zombie* zombieHorde(int N, std::string name)
-// {
-// 	Zombie* horde = new Zombie[N];
-// 	int i = 0;
-// 	while(i < N)
-// 	{
-// 		horde[i].set_name(name);
-// 		i++;
-// 	}
-// 	return (horde);
-// }
