@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:31:11 by adores            #+#    #+#             */
-/*   Updated: 2026/05/18 16:51:58 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/19 10:45:01 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class HumanB{
 		HumanB(std::string name);
 		~HumanB();
 		void attack();
+		void setWeapon(Weapon weapon);
 		
 };
 

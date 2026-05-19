@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:39:21 by adores            #+#    #+#             */
-/*   Updated: 2026/05/18 16:52:33 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/19 10:45:11 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,9 @@ void HumanB::attack()
 		std::cout << name << " attacks with their nothing" << std::endl;
 	else
 		std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+}
+
+void setWeapon(Weapon weapon)
+{
+	
 }
