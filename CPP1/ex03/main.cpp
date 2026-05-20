@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:12:29 by adores            #+#    #+#             */
-/*   Updated: 2026/05/18 16:47:09 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/20 12:31:22 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ int main()
 	}
 	return 0;
 }
+
+//usamos referencia no humanoA pq ele tem sempre uma weapon 
+//e nunca vai ser vazia
+
+//o B pode ser um pointer pq nem sempre vai ter uma weapon e 
+//o pointer pode ser null

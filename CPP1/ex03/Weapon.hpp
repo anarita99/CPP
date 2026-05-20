@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:14:39 by adores            #+#    #+#             */
-/*   Updated: 2026/05/19 10:06:57 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/20 11:58:12 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Weapon{
 		std::string type;
 	public:
 		Weapon(std::string type);
+		Weapon(){};
 		~Weapon();
 		const std::string &getType();
 		void setType(std::string newType);
