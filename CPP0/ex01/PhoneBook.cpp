@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/18 15:32:07 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/21 11:34:03 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ static void exit_eof(void)
 		std::cout << "Exiting program." << std::endl;
 		std::exit(0);
 	}
+}
+
+static bool is_phone_number(std::string input)
+{
+	int i = 0;
+	while(input[i])
+	{
+		if(!isdigit(input[i]))
+			return false;
+		i++;
+	}
+	return true;
 }
 
 void PhoneBook:: add()
@@ -62,8 +74,10 @@ void PhoneBook:: add()
 		exit_eof();
 		if(input.empty())
 			std::cout << "Empty field. Try again." << std::endl;
+		if(is_phone_number(input) == false)
+			std::cout << "You need to insert numbers only." << std::endl;
 	}
-	while(input.empty());
+	while(input.empty() || is_phone_number(input) == false);
 	contact[i].edit_phone_number(input);
 	do
 	{
@@ -106,6 +120,8 @@ void PhoneBook::print_contacts()
 	std::cout << " -------------------------------------------" << std::endl;
 }
 
+
+
 void PhoneBook::search()
 {
 	print_contacts();
@@ -128,7 +144,7 @@ void PhoneBook::search()
 			while(answer.empty());
 			std::istringstream iss(answer);
 			iss >> num;
-			if(num >= added_contacts)
+			if(num >= added_contacts || !isdigit(answer[0]) || answer.length() > 1)
 			{
 				std::cout << "Index not correct." << std::endl;
 				continue;

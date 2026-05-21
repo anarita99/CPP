@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:35 by adores            #+#    #+#             */
-/*   Updated: 2026/05/14 10:43:39 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/21 15:43:16 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int ac, char **av)
 	{
 		for(int i = 1; i < ac; i++)
 			std:: cout << print(av[i]);
-		std:: cout << "\n";
+		std:: cout << std::endl;
 	}
 	return (0);
 }

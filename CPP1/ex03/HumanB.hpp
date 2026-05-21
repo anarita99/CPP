@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:31:11 by adores            #+#    #+#             */
-/*   Updated: 2026/05/20 12:08:48 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/21 12:39:34 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 class HumanB{
 	private:
 		std::string name;
-		Weapon weapon;
+		Weapon *weapon;
 	public:
 		HumanB(std::string name);
 		~HumanB();
 		void attack();
-		void setWeapon(Weapon weapon);
+		void setWeapon(Weapon &weapon);
 		
 };
 
