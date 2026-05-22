@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:45:15 by adores            #+#    #+#             */
-/*   Updated: 2026/05/20 14:51:27 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/22 16:47:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
 
-void replace(std::string filename, std::string s1, std::string s2)
+int	main(int ac, char **av)
 {
-	
+	if(ac != 4)
+		return 1;
+	if (replace(av[1], av[2], av[3]) == 1)
+		return 1;
+	return 0;
 }
