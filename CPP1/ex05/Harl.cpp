@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:59:32 by adores            #+#    #+#             */
-/*   Updated: 2026/05/20 16:20:31 by adores           ###   ########.fr       */
+/*   Updated: 2026/05/23 15:27:06 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,17 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-	
+	int i = 0;
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*f[4])() = {&Harl::debug, &Harl::info, &Harl::warning ,&Harl::error};
+	while(i < 4)
+	{
+		if(level == levels[i])
+		{
+			(this->*f[i])();
+			return;
+		}
+		i++;
+	}
+	std::cerr << "No level found with that name." << std::endl;
 }
