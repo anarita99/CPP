@@ -6,14 +6,14 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 10:41:24 by adores            #+#    #+#             */
-/*   Updated: 2026/05/21 11:34:03 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/16 11:21:39 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-static void exit_eof(void)
+void exit_eof(void)
 {
 	if (std::cin.eof())
 	{
@@ -22,7 +22,7 @@ static void exit_eof(void)
 	}
 }
 
-static bool is_phone_number(std::string input)
+bool is_phone_number(std::string input)
 {
 	int i = 0;
 	while(input[i])
@@ -169,37 +169,3 @@ void PhoneBook::exit()
 	std::cout << "Exiting program"<< std:: endl;
 }
 
-int main()
-{
-	PhoneBook contacts;
-	std:: string input;
-	contacts.i = 0;
-	contacts.added_contacts = 0;
-	while(1)
-	{
-		std:: cout << "> Please enter ADD, SEARCH or EXIT: " << std:: endl;
-		std::getline(std::cin, input);
-		exit_eof();
-		if(input == "ADD")
-		{
-			if(contacts.i < 8)
-				contacts.add();
-			else if(contacts.i == 8)
-			{
-				contacts.i = 0;
-				contacts.add();
-			}
-		}
-		else if(input == "SEARCH")
-			contacts.search();
-		else if(input == "EXIT")
-		{
-			contacts.exit();
-			break ;
-		}
-		else
-			std:: cout << "Not a valid word. " << std:: endl;
-	}
-	return (0);
-	
-}

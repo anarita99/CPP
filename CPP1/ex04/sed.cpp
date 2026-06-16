@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:32:27 by adores            #+#    #+#             */
-/*   Updated: 2026/05/22 16:46:56 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/16 11:13:28 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int replace(std::string filename, std::string s1, std::string s2)
 	file.open(filename.c_str(), std::ios::in);
 	if(!file.is_open())
 	{
-		std::cerr << "Error opening file." << std::endl;
+		std::cout << "Error opening file." << std::endl;
 		return 1;
 	}
 
@@ -31,7 +31,7 @@ int replace(std::string filename, std::string s1, std::string s2)
 	replace_file.open(replace_name.c_str(), std::ios::out);
 	if(!replace_file.is_open())
 	{
-		std::cerr << "Error opening second file." << std::endl;
+		std::cout << "Error opening second file." << std::endl;
 		file.close();
 		return 1;
 	}

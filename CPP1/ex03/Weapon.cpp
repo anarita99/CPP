@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:05:43 by adores            #+#    #+#             */
-/*   Updated: 2026/05/20 12:23:45 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/16 11:09:43 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Weapon::Weapon(std::string type)
 {
 	Weapon::type = type;
+}
+
+Weapon::Weapon()
+{
+	
 }
 
 Weapon::~Weapon()

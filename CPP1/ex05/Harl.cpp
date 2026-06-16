@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:59:32 by adores            #+#    #+#             */
-/*   Updated: 2026/05/23 15:27:06 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/16 11:13:53 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void Harl::complain(std::string level)
 		}
 		i++;
 	}
-	std::cerr << "No level found with that name." << std::endl;
+	std::cout << "No level found with that name." << std::endl;
 }
