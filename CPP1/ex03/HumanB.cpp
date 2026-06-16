@@ -6,15 +6,15 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:39:21 by adores            #+#    #+#             */
-/*   Updated: 2026/05/21 12:40:07 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/16 15:25:26 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : name(name), weapon(NULL)
 {
-	HumanB::name = name;
+	
 }
 
 HumanB::~HumanB()
