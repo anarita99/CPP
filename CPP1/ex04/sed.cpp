@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:32:27 by adores            #+#    #+#             */
-/*   Updated: 2026/06/16 11:13:28 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/17 12:11:48 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,16 @@ int replace(std::string filename, std::string s1, std::string s2)
 	}
 
 	std::string str;
-	unsigned long find_return;
+	size_t pos;
 	while (getline(file, str))
 	{
-		do
+		pos = 0;
+		while ((pos = str.find(s1, pos)) != std::string::npos)
 		{
-			find_return = str.find(s1, 0);
-			if(find_return == std::string::npos)
-				break;
-			str.erase(find_return, s1.length());
-			str.insert(find_return, s2);
+			str.erase(pos, s1.length());
+			str.insert(pos, s2);
+			pos += s2.length();
 		}
-		while(find_return != std::string::npos);
 		replace_file << str << "\n";
 	}
 	file.close();
