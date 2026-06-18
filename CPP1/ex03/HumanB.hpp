@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 16:31:11 by adores            #+#    #+#             */
-/*   Updated: 2026/05/21 12:39:34 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/18 14:37:18 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class HumanB{
 		~HumanB();
 		void attack();
 		void setWeapon(Weapon &weapon);
-		
 };
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:07:50 by adores            #+#    #+#             */
-/*   Updated: 2026/05/23 15:38:03 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/18 14:39:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(int ac, char **av)
+int main()
 {
 	Harl harl;
 	harl.complain("DEBUG");

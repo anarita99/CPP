@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:39:52 by adores            #+#    #+#             */
-/*   Updated: 2026/05/15 11:27:16 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/18 14:34:42 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 int main()
 {
-	Zombie *zombies;
+	Zombie *horde1;
 	Zombie *horde2;
-	zombies = zombieHorde(5, "maria");
+	horde1 = zombieHorde(-8, "maria");
+	if (!horde1)
+		std::cout << "Error: Wrong number of zombies in horde 1." << std::endl;
 	horde2 = zombieHorde(2, "joaquim");
+	if (!horde2)
+		std::cout << "Error: Wrong number of zombies in horde 2." << std::endl;
 	
-	delete [] zombies;
+	delete [] horde1;
 	delete [] horde2;
 }
