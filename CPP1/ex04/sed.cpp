@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 10:32:27 by adores            #+#    #+#             */
-/*   Updated: 2026/06/17 12:11:48 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/18 12:33:31 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,9 @@ int replace(std::string filename, std::string s1, std::string s2)
 	replace_file.close();
 	return 0;
 }
+
+/*According to all known laws of aviation, there is no way
+ that a bee should be able to fly. Its wings are too small 
+ to get its fat little body off the ground. The bee, of course, 
+ flies anyways. Because bees don't care what humans think is impossible.
+*/
