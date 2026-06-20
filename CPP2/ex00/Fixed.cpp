@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/06/19 16:46:32 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/20 14:39:12 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,17 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int _fixed)
-{
-	Fixed::_fixed = _fixed;
-}
-
-Fixed::Fixed(Fixed &fixed)
+Fixed::Fixed(const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 //o 1º fixed é o retorno da funçao
-Fixed Fixed::operator=(const Fixed &f)
+Fixed& Fixed::operator=(const Fixed &f)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (&f != this)
-		this->_fixed = f._fixed;
+		this->_fixed =f.getRawBits();
 	return *this;
 }
 
