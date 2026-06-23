@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 14:58:21 by adores            #+#    #+#             */
-/*   Updated: 2026/06/22 10:32:07 by adores           ###   ########.fr       */
+/*   Updated: 2026/06/22 10:35:47 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 class Fixed{
 	private:
@@ -22,11 +23,16 @@ class Fixed{
 		static const int _fractbits;
 	public:
 		Fixed();
+		Fixed(const int i);
+		Fixed(const float flo);
 		Fixed(const Fixed &fixed);
 		Fixed& operator=(const Fixed &f);
+		Fixed& operator<<();
 		~Fixed();
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
 };
 
 #endif
