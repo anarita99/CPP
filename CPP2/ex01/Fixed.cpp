@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/06/23 15:23:46 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/03 14:43:11 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,12 @@ void Fixed::setRawBits(int const raw)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+//como se fosse std::cout << f.tofloat mas neste caso 'e o out
+
+std::ostream &operator<<(std::ostream& out, const Fixed &f)
+{
+	out << f.toFloat();
+	return (out);
 }
