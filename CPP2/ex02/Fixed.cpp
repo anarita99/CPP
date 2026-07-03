@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/07/03 16:31:49 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/03 16:48:32 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,63 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
+bool Fixed::operator>(const Fixed &f) const
+{
+	if (this->_raw > f._raw)
+		return (true);
+	return(false);
+}
+
+bool Fixed::operator<(const Fixed &f) const
+{
+	if (this->_raw < f._raw)
+		return (true);
+	return(false);
+}
+
+bool Fixed::operator>=(const Fixed &f) const
+{
+	if (this->_raw >= f._raw)
+		return (true);
+	return(false);
+}
+
+bool Fixed::operator<=(const Fixed &f) const
+{
+	if (this->_raw <= f._raw)
+		return (true);
+	return(false);
+}
+
+bool Fixed::operator==(const Fixed &f) const
+{
+	if (this->_raw == f._raw)
+		return (true);
+	return(false);
+}
+
+bool Fixed::operator!=(const Fixed &f) const
+{
+	if (this->_raw != f._raw)
+		return (true);
+	return(false);
+}
+
+Fixed Fixed::operator+(const Fixed &f) const
+{
+	Fixed a;
+	a = f._raw + this->_raw;
+	return (a);
+}
+
+Fixed Fixed::operator-(const Fixed &f) const
+{
+	Fixed a;
+	a = this->_raw - f._raw;
+	return (a);
+}
+
+
 //como se fosse std::cout << f.tofloat mas neste caso 'e o out
 
 std::ostream &operator<<(std::ostream& out, const Fixed &f)
@@ -94,4 +151,3 @@ std::ostream &operator<<(std::ostream& out, const Fixed &f)
 	out << f.toFloat();
 	return (out);
 }
-
