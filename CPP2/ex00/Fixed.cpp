@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/06/22 10:32:07 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/03 12:11:46 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Fixed::Fixed(const Fixed &fixed)
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
-//o 1º fixed é o retorno da funçao
+
+// devolve uma referência ao próprio objeto, para permitir a = b = c;
 Fixed& Fixed::operator=(const Fixed &f)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
