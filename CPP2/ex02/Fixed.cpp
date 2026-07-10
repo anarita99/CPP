@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/07/03 16:48:32 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/10 14:42:13 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,15 +132,55 @@ bool Fixed::operator!=(const Fixed &f) const
 Fixed Fixed::operator+(const Fixed &f) const
 {
 	Fixed a;
-	a = f._raw + this->_raw;
+	a._raw = this->_raw + f._raw;
 	return (a);
 }
 
 Fixed Fixed::operator-(const Fixed &f) const
 {
 	Fixed a;
-	a = this->_raw - f._raw;
+	a._raw = this->_raw - f._raw;
 	return (a);
+}
+
+Fixed Fixed::operator*(const Fixed &f) const
+{
+	Fixed a;
+	a._raw = ((signed long long)this->_raw * (signed long long)f._raw) >> _fractbits;
+	return (a);
+}
+
+Fixed Fixed::operator/(const Fixed &f) const
+{
+	Fixed a;
+	a._raw = ((signed long long)this->_raw << _fractbits) / f._raw;
+	return (a);
+}
+
+Fixed &Fixed::operator++(void)
+{
+	this->_raw++;
+	return(*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed a = *this;
+	this->_raw++;
+	return(a);
+}
+
+Fixed &Fixed::operator--(void)
+{
+	this->_raw--;
+	return(*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed a = *this;
+	this->_raw--;
+	return(a);
 }
 
 
