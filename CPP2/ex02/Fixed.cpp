@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 15:11:21 by adores            #+#    #+#             */
-/*   Updated: 2026/07/10 14:42:13 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/13 10:06:54 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,37 @@ Fixed Fixed::operator--(int)
 	return(a);
 }
 
+Fixed &Fixed :: min(Fixed &num1, Fixed &num2)
+{
+	if (num1 < num2)
+		return (num1);
+	else
+		return(num2);
+}
+
+const Fixed &Fixed :: min(const Fixed &num1, const Fixed &num2)
+{
+	if (num1 < num2)
+		return (num1);
+	else
+		return(num2);
+}
+
+Fixed &Fixed:: max(Fixed &num1, Fixed &num2)
+{
+	if (num1 > num2)
+		return (num1);
+	else
+		return (num2);
+}
+
+const Fixed &Fixed :: max(const Fixed &num1,const Fixed &num2)
+{
+	if (num1 > num2)
+		return (num1);
+	else
+		return (num2);
+}
 
 //como se fosse std::cout << f.tofloat mas neste caso 'e o out
 

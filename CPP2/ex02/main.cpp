@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 16:39:25 by adores            #+#    #+#             */
-/*   Updated: 2026/07/10 12:11:10 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/13 10:08:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main( void )
 	// std::cout << a++ << std::endl;
 	// std::cout << a << std::endl;
 	// std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( c, d ) << std::endl;
 	return 0;
 }
 
