@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/13 10:32:27 by adores            #+#    #+#             */
-/*   Updated: 2026/07/14 09:58:22 by adores           ###   ########.fr       */
+/*   Created: 2026/07/14 12:12:58 by adores            #+#    #+#             */
+/*   Updated: 2026/07/14 12:32:40 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(void)
+ScavTrap::ScavTrap(std::string name)
 {
-	ClapTrap clap;
-	clap.attack("Wall-e");
-	clap.beRepaired(3);
-	clap.takeDamage(7);
-	clap.takeDamage(12);
-	clap.beRepaired(3);
+
 }

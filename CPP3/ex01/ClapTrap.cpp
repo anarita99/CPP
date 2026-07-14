@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 11:01:33 by adores            #+#    #+#             */
-/*   Updated: 2026/07/14 10:17:33 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/14 12:25:30 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 ClapTrap::ClapTrap()
 {
 	_name = "ClapTrap";
-	_hitPoints = 10;
-	_energyPoints = 10;
-	_attackDamage = 0;
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_attackDamage = 30;
 	std::cout << "Default constructor called." << std::endl;
 }
 
