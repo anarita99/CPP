@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 10:33:46 by adores            #+#    #+#             */
-/*   Updated: 2026/07/13 14:08:31 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/16 15:50:05 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 
 class ClapTrap{
-	private:
+	protected:
 		std::string _name;
 		unsigned int _hitPoints;
 		unsigned int _energyPoints;

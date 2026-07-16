@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 11:01:33 by adores            #+#    #+#             */
-/*   Updated: 2026/07/14 12:25:30 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/16 15:50:45 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 ClapTrap::ClapTrap()
 {
 	_name = "ClapTrap";
-	_hitPoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0;
 	std::cout << "Default constructor called." << std::endl;
 }
 
@@ -56,7 +56,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 
 void ClapTrap::attack(const std::string& target)
 {
-	
 	if (this->_hitPoints == 0 || this->_energyPoints == 0)
 		std::cout << this->_name << " has no energy left." << std::endl;
 	else
