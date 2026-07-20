@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 12:12:58 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 10:14:54 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/20 10:24:55 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap:: operator=(const ScavTrap& other)
 {
-	if (&other != this)
+	if (this != &other)
 	{
 		this->_name = other._name;
 		this->_hitPoints = other._hitPoints;
@@ -48,7 +48,7 @@ ScavTrap &ScavTrap:: operator=(const ScavTrap& other)
 	return *this;
 }
 
-ScavTrap::ScavTrap(const ClapTrap& other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	*this = other;
 	std::cout << "ScavTrap copy constructor called." << std::endl;
