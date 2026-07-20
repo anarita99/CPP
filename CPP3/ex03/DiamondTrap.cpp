@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:30:41 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 11:34:36 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/20 11:39:06 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ DiamondTrap& DiamondTrap:: operator=(const DiamondTrap &other)
 	return *this;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other) , ScavTrap(other), FragTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other) , FragTrap(other), ScavTrap(other)
 {
 	*this = other;
 	std::cout << "DiamondTrap copy constructor called" << std::endl;

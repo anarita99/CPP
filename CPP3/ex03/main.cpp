@@ -6,18 +6,20 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 10:32:27 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 10:27:11 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/20 11:37:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
 	ClapTrap clap;
 	ScavTrap scav;
 	FragTrap frag;
+	DiamondTrap dia;
 	
 	clap.attack("Wall-e");
 	
@@ -39,4 +41,10 @@ int main(void)
 	frag.takeDamage(40);
 	frag.beRepaired(3);
 	frag.highFivesGuys();
+
+	dia.attack("robot");
+	dia.beRepaired(8);
+	dia.takeDamage(7);
+	dia.whoAmI();
+	return 0;
 }

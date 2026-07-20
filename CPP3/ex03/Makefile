@@ -6,15 +6,15 @@
 #    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/13 14:55:17 by adores            #+#    #+#              #
-#    Updated: 2026/07/20 10:29:04 by adores           ###   ########.fr        #
+#    Updated: 2026/07/20 11:47:44 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = diamondtrap
 CPP = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 RM = rm -f
 
