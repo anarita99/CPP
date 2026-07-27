@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:30:41 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 11:39:06 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/27 11:27:26 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-
-/*
-DiamondTrap& operator=(const DiamondTrap &other);
-DiamondTrap(const DiamondTrap &other);
-~DiamondTrap();*/
 
 DiamondTrap :: DiamondTrap()
 {
