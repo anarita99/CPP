@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 10:30:41 by adores            #+#    #+#             */
-/*   Updated: 2026/07/27 11:27:26 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/27 13:28:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ DiamondTrap :: DiamondTrap()
 	std::cout << "DiamondTrap default constructor called." << std::endl;
 }
 
-DiamondTrap :: DiamondTrap(std::string name)
+DiamondTrap :: DiamondTrap(std::string name) : ClapTrap(name) , FragTrap(name), ScavTrap(name)
 {
 	_name = name;
 	ClapTrap::_name = name + "_clap_name";
