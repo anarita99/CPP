@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:39 by adores            #+#    #+#             */
-/*   Updated: 2026/07/27 13:55:09 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/28 12:30:44 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog()
 {
 	type = "Dog";
+	brain = new Brain();
 	std::cout << "Dog default constructor called." << std::endl;
 }
 
@@ -41,5 +42,6 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
+	delete brain;
 	std::cout << "Dog destructor called." << std::endl;
 }

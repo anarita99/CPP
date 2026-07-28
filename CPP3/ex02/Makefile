@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
+#    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/13 14:55:17 by adores            #+#    #+#              #
-#    Updated: 2026/07/20 10:29:04 by adores           ###   ########.fr        #
+#    Updated: 2026/07/28 13:07:01 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 RM = rm -f
 
-all:
+all: $(NAME)
+
+$(NAME):
 	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:

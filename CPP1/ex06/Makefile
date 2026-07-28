@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
+#    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 15:29:21 by adores            #+#    #+#              #
-#    Updated: 2026/05/23 15:51:32 by adores           ###   ########.fr        #
+#    Updated: 2026/07/28 13:09:29 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRCS = main.cpp Harl.cpp
 
 RM = rm -f
 
-all:
+all: $(NAME)
+
+$(NAME):
 	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:

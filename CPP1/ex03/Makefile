@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/20 12:13:58 by adores            #+#    #+#              #
-#    Updated: 2026/05/20 12:14:54 by adores           ###   ########.fr        #
+#    Updated: 2026/07/28 13:09:08 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRCS = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 
 RM = rm -f
 
-all:
+all: $(NAME)
+
+$(NAME):
 	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:

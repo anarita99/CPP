@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:35 by adores            #+#    #+#             */
-/*   Updated: 2026/07/27 13:54:40 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/28 11:19:44 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat()
 {
 	type = "Cat";
+	brain = new Brain();
 	std::cout << "Cat default constructor called." << std::endl;
 }
 
@@ -41,5 +42,6 @@ void Cat::makeSound() const
 
 Cat::~Cat()
 {
+	delete brain;
 	std::cout << "Cat destructor called." << std::endl;
 }

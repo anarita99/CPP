@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
+#    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/20 14:57:47 by adores            #+#    #+#              #
-#    Updated: 2026/07/20 16:30:12 by adores           ###   ########.fr        #
+#    Updated: 2026/07/28 13:06:31 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 RM = rm -f
 
-all:
+all: $(NAME)
+
+$(NAME):
 	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:

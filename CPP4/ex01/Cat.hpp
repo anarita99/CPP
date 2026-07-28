@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:32 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 16:02:25 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/28 11:11:25 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include "Animal.hpp"
 
-
 class Cat : public Animal
 {
+	private:
+		Brain* brain;
 	public:
 		Cat();
 		Cat(const Cat &other);
