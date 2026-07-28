@@ -6,29 +6,30 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/20 14:57:47 by adores            #+#    #+#              #
-#    Updated: 2026/07/28 13:06:18 by adores           ###   ########.fr        #
+#    Updated: 2026/07/28 15:52:14 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = brain
+CXX  = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = polymorphism
-CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
-
-RM = rm -f
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):
-	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

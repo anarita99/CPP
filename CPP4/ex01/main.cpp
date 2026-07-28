@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:56:14 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 16:29:48 by adores           ###   ########.fr       */
+/*   Updated: 2026/07/28 15:43:10 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
-
+#include "Brain.hpp"
 
 int main()
 {
@@ -32,6 +32,18 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	l->makeSound();
+	
+	Cat a;
+	Dog b;
+	Dog c(b);
+
+	a.getBrain()->writeIdea("Hungry", 0);
+	std::cout << a.getBrain()->getIdea(0) << std::endl;
+	std::cout << b.getBrain()->getIdea(0) << std::endl;
+	b.getBrain()->writeIdea("Sleepy", 0);
+	std::cout << b.getBrain()->getIdea(0) << std::endl;
+	std::cout << c.getBrain()->getIdea(0) << std::endl;
+	
 	
 	delete i;
 	delete j;
