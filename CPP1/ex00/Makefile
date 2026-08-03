@@ -6,13 +6,13 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/13 11:37:26 by adores            #+#    #+#              #
-#    Updated: 2026/05/13 11:39:21 by adores           ###   ########.fr        #
+#    Updated: 2026/08/03 11:52:17 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
-CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX  = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJS = $(SRCS:.cpp=.o)

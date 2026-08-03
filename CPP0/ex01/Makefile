@@ -6,13 +6,13 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/26 11:43:54 by adores            #+#    #+#              #
-#    Updated: 2026/06/16 11:23:42 by adores           ###   ########.fr        #
+#    Updated: 2026/08/03 11:51:16 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
-CPP = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX  = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = PhoneBook.cpp Contact.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
