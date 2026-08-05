@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:56:14 by adores            #+#    #+#             */
-/*   Updated: 2026/07/27 14:37:26 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/05 14:38:45 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main()
 
 	Dog a;
 	Dog b(a);
+	Dog c;
+	c = a;
 	
 	std::cout << a.getType() << " " << std::endl;
 	std::cout << b.getType() << " " << std::endl;
