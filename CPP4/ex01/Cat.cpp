@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:35 by adores            #+#    #+#             */
-/*   Updated: 2026/07/28 15:18:38 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/05 13:56:55 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cat& Cat::operator=(const Cat &other)
 
 Cat::Cat(const Cat &other) : Animal(other)
 {
+	_brain = new Brain();
 	*this = other;
 	std::cout << "Cat copy constructor called." << std::endl;
 }

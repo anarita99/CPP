@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:39 by adores            #+#    #+#             */
-/*   Updated: 2026/07/28 15:45:02 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/05 12:04:31 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog& Dog::operator=(const Dog &other)
 
 Dog::Dog(const Dog &other) : Animal(other)
 {
+	_brain = new Brain();
 	*this = other;
 	std::cout << "Dog copy constructor called." << std::endl;
 }

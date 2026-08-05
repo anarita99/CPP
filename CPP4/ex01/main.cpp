@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:56:14 by adores            #+#    #+#             */
-/*   Updated: 2026/07/28 15:43:10 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/05 14:25:53 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int main()
 {
+	
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -36,6 +37,9 @@ int main()
 	Cat a;
 	Dog b;
 	Dog c(b);
+	Dog d;
+
+	d = b;
 
 	a.getBrain()->writeIdea("Hungry", 0);
 	std::cout << a.getBrain()->getIdea(0) << std::endl;
@@ -43,11 +47,42 @@ int main()
 	b.getBrain()->writeIdea("Sleepy", 0);
 	std::cout << b.getBrain()->getIdea(0) << std::endl;
 	std::cout << c.getBrain()->getIdea(0) << std::endl;
+	d.getBrain()->writeIdea("I dont know", 0);
+	std::cout << d.getBrain()->getIdea(0) << std::endl;
 	
+
+	std::cout << "----Animals----" << std::endl;
+	Animal *animals[10];
+	for(int i = 0; i < 5; i++)
+		animals[i] = new Dog();
+	for(int i = 5; i < 10; i++)
+		animals[i] = new Cat();
 	
+	for(int i = 0; i < 10; i++)
+		delete animals[i];
 	delete i;
 	delete j;
 	delete l;
 	delete meta;
 	return 0;
 }
+
+
+/*
+Dog a; -. create A
+
+Dog b(a);  -> create B, equals A
+Dob b = a;
+
+
+Dog c; -> create C
+
+c = b -> c = b
+
+
+
+
+
+
+
+*/
