@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:21:24 by adores            #+#    #+#             */
-/*   Updated: 2026/07/20 16:26:18 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/06 14:02:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat(const WrongCat &other);
 		WrongCat &operator=(const WrongCat &other);
-		virtual ~WrongCat();
+		~WrongCat();
 		void makeSound() const;
 };
 

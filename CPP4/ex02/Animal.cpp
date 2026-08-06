@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:52:56 by adores            #+#    #+#             */
-/*   Updated: 2026/08/06 11:26:19 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/06 13:53:22 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ Animal::Animal(const Animal &other)
 	*this = other;
 	std::cout << "Animal copy constructor called." << std::endl;
 }
-
-/*void AAnimal::makeSound() const
-{
-	std::cout << "sound sound sound" << std::endl;
-}*/
 
 std::string Animal::getType() const
 {

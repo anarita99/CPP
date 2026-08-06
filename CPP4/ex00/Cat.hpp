@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 14:57:32 by adores            #+#    #+#             */
-/*   Updated: 2026/07/28 11:10:25 by adores           ###   ########.fr       */
+/*   Updated: 2026/08/06 13:59:49 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat &other);
 		Cat &operator=(const Cat &other);
-		virtual ~Cat();
+		~Cat();
 		void makeSound() const;
 		
 };
