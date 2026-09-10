@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 14:23:47 by adores            #+#    #+#             */
-/*   Updated: 2026/08/24 14:29:33 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/10 14:25:19 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,31 @@ int main()
 {
 	try
 	{
-		Bureaucrat(151);
+		Bureaucrat("bureaucrat", 0);
 	}
-	catch(int n)
+	catch(std::exception &e)
 	{
-		if(n == -1)
-			std::cerr << "GradeTooLowException" << std::endl;
-		else if(n == -2)
-			std::cerr << "GradeTooHighException" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+	try
+	{
+		Bureaucrat b;
+		b.upGrade();
+		std::cout << b;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat b;
+		b.lowGrade();
+		std::cout << b;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 }
