@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:25:12 by adores            #+#    #+#             */
-/*   Updated: 2026/09/14 15:19:54 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/15 15:56:39 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <exception>
-#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -31,17 +32,16 @@ class Form
 	class GradeTooLowException : public std::exception{
 		virtual const char* what() const _GLIBCXX_NOTHROW;
 	};
-	std::string getName();
-	bool	getIsSigned();
-	int		getGradeToSign();
-	int		getGradeToExe();
+	std::string getName() const;
+	bool	getIsSigned() const;
+	int		getGradeToSign() const;
+	int		getGradeToExe() const;
 	Form();
 	~Form();
 	Form(const std::string name, const int gradeToSign, const int gradeToExe);
 	Form(const Form &other);
 	Form &operator=(const Form &other);
 	void beSigned(Bureaucrat &b);
-	
 
 };
 

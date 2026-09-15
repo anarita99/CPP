@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 12:12:36 by adores            #+#    #+#             */
-/*   Updated: 2026/09/14 14:33:01 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/15 15:55:23 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _name("Bureaucrat"), _grade(1)
 {
@@ -85,4 +86,17 @@ const char* Bureaucrat::GradeTooHighException::what() const _GLIBCXX_NOTHROW
 const char* Bureaucrat::GradeTooLowException::what() const _GLIBCXX_NOTHROW
 {
 	return "Grade too low exception";
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cout << this->getName() << " couldn't sign "<< f.getName() << " because " << e.what() << std::endl;
+	}
 }
