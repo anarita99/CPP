@@ -6,11 +6,12 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 12:12:36 by adores            #+#    #+#             */
-/*   Updated: 2026/09/17 14:19:32 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/17 16:24:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name("Bureaucrat"), _grade(1)
 {
@@ -85,4 +86,31 @@ const char* Bureaucrat::GradeTooHighException::what() const _GLIBCXX_NOTHROW
 const char* Bureaucrat::GradeTooLowException::what() const _GLIBCXX_NOTHROW
 {
 	return "Grade too low exception";
+}
+
+void Bureaucrat::signForm(AForm &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cerr << this->getName() << " couldn't sign "<< f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << e.what() << form.getName() << std::endl;
+	}
+	
 }

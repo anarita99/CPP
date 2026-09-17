@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:25:06 by adores            #+#    #+#             */
-/*   Updated: 2026/09/17 11:26:52 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/17 16:25:14 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() 
-: _name("FORM"), _isSigned(false), _gradeToSign(15), _gradeToExe(2)
+AForm::AForm()
+: _name("AFORM"), _isSigned(false), _gradeToSign(15), _gradeToExe(2)
 {
 	
 }
 
-Form::Form(const std::string name, const int gradeToSign, const int gradeToExe)
+AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExe)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExe(gradeToExe) 
 {
 	if (gradeToSign < 1 || gradeToExe < 1)
@@ -28,42 +28,47 @@ Form::Form(const std::string name, const int gradeToSign, const int gradeToExe)
 		throw GradeTooLowException();
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	
 }
 
-const char* Form::GradeTooHighException::what() const _GLIBCXX_NOTHROW
+const char* AForm::GradeTooHighException::what() const _GLIBCXX_NOTHROW
 {
 	return "grade is too high";
 }
 
-const char* Form::GradeTooLowException::what() const _GLIBCXX_NOTHROW
+const char* AForm::GradeTooLowException::what() const _GLIBCXX_NOTHROW
 {
 	return "grade is too low";
 }
 
-std::string Form::getName() const
+const char* AForm::NotAllowedException::what() const _GLIBCXX_NOTHROW
+{
+	return " is not allowed to execute the form ";
+}
+
+std::string AForm::getName() const
 {
 	return(this->_name);
 }
 
-bool Form::getIsSigned() const
+bool AForm::getIsSigned() const
 {
 	return(this->_isSigned);
 }
 
-int Form::getGradeToSign() const
+int AForm::getGradeToSign() const
 {
 	return(this->_gradeToSign);
 }
 
-int Form::getGradeToExe() const
+int AForm::getGradeToExe() const
 {
 	return(this->_gradeToExe);
 }
 
-Form&  Form::operator=(const Form &other)
+AForm&  AForm::operator=(const AForm &other)
 {
 	if(this != &other)
 	{
@@ -72,13 +77,13 @@ Form&  Form::operator=(const Form &other)
 	return(*this);
 }
 
-Form::Form(const Form &other) 
+AForm::AForm(const AForm &other) 
 	: _name(other._name) , _isSigned(false), _gradeToSign(other._gradeToSign), _gradeToExe(other._gradeToExe)
 {
 	
 }
 
-void Form::beSigned(Bureaucrat &b)
+void AForm::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() <= this->getGradeToSign())
 		this->_isSigned = true;
@@ -88,7 +93,7 @@ void Form::beSigned(Bureaucrat &b)
 
 //é suposto assinar quando está true?
 
-std::ostream &operator<<(std::ostream &out, const Form &f)
+std::ostream &operator<<(std::ostream &out, const AForm &f)
 {
 	out << "Name: " << f.getName() << "\nGrade to sign: " << f.getGradeToSign() << "\nGrade to Exe: " 
 		<< f.getGradeToExe() << "\nIs it signed: ";
@@ -97,4 +102,12 @@ std::ostream &operator<<(std::ostream &out, const Form &f)
 	else
 		out << "True";
 	return (out);
+}
+
+void AForm::execute(Bureaucrat const &executor) const
+{
+	if(this->getIsSigned() == true && this->getGradeToExe() >= executor.getGrade())
+		makeForm();
+	else
+		throw NotAllowedException();
 }

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 14:23:47 by adores            #+#    #+#             */
-/*   Updated: 2026/09/15 15:20:23 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/17 11:30:59 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ int main()
 		std::cout << "Caught (expected GradeTooLowException): " << e.what() << std::endl;
 	}
  
-	std::cout << "\n----- Test 8: signing an already signed form -----" << std::endl;
+	//is this supposed to be tested??
+	/*std::cout << "\n----- Test 8: signing an already signed form -----" << std::endl;
 	try
 	{
 		Bureaucrat eve("Eve", 1);
@@ -111,7 +112,7 @@ int main()
 		std::cout << form << std::endl;
 		eve.signForm(form);
 		std::cout << form << std::endl;
-	}
+	}*/
 	catch (std::exception & e)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;

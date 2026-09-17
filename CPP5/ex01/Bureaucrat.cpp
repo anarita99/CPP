@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 12:12:36 by adores            #+#    #+#             */
-/*   Updated: 2026/09/15 15:55:23 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/17 14:19:06 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 		_grade = grade;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
 	return (this->_name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }
