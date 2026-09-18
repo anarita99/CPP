@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/24 12:26:21 by adores            #+#    #+#              #
-#    Updated: 2026/09/17 16:22:52 by adores           ###   ########.fr        #
+#    Updated: 2026/09/18 16:27:29 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = bureaucrat
 CXX  = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

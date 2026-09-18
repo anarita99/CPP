@@ -4,13 +4,14 @@
 #include <iostream>
 #include <string>
 #include "AForm.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string _target;
 	public:
-		//RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);

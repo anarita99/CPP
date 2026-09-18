@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 14:23:47 by adores            #+#    #+#             */
-/*   Updated: 2026/09/17 16:20:14 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/18 16:47:06 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
-// #include "ShrubberyCreationForm.hpp"
-// #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
  
 int main()
 {
+	srand(time(NULL));
 	std::cout << "----- Test 1: construct concrete forms -----" << std::endl;
 	try
 	{
-		// ShrubberyCreationForm shrub("home");
-		// RobotomyRequestForm robot("Bender");
+		ShrubberyCreationForm shrub("home");
+		RobotomyRequestForm robot("Bender");
 		PresidentialPardonForm pardon("Fry");
-		// std::cout << shrub << std::endl;
-		// std::cout << robot << std::endl;
+		std::cout << shrub << std::endl;
+		std::cout << robot << std::endl;
 		std::cout << pardon << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
- 
-	/*
 	std::cout << "\n----- Test 2: execute without signing -----" << std::endl;
 	try
 	{
@@ -46,9 +45,7 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
- 
-	/*
+
 	std::cout << "\n----- Test 3: sign then execute (ShrubberyCreationForm) -----" << std::endl;
 	try
 	{
@@ -62,9 +59,7 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
- 
-	/*
+
 	std::cout << "\n----- Test 4: sign then execute (RobotomyRequestForm) -----" << std::endl;
 	try
 	{
@@ -77,7 +72,6 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
  
 	std::cout << "\n----- Test 5: sign then execute (PresidentialPardonForm) -----" << std::endl;
 	try
@@ -91,8 +85,7 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
- 
-	/*
+
 	std::cout << "\n----- Test 6: signed but grade too low to execute -----" << std::endl;
 	try
 	{
@@ -106,7 +99,6 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
  
 	std::cout << "\n----- Test 7: grade too low to sign in the first place -----" << std::endl;
 	try
@@ -120,8 +112,6 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
- 
-	/*
 	std::cout << "\n----- Test 8: robotomy request run multiple times (random success/fail) -----" << std::endl;
 	try
 	{
@@ -137,7 +127,6 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
  
 	std::cout << "\n----- Test 9: execute() called directly (not via Bureaucrat::executeForm) -----" << std::endl;
 	try
@@ -151,8 +140,7 @@ int main()
 	{
 		std::cout << "Caught: " << e.what() << std::endl;
 	}
- 
-	/*
+
 	std::cout << "\n----- Test 10: polymorphism through AForm pointers -----" << std::endl;
 	try
 	{
@@ -173,7 +161,6 @@ int main()
 	{
 		std::cout << "Unexpected exception: " << e.what() << std::endl;
 	}
-	*/
  
 	std::cout << "\n----- Test 10b: polymorphism through AForm pointer (PresidentialPardonForm only) -----" << std::endl;
 	try
