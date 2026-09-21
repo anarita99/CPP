@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 12:21:47 by adores            #+#    #+#             */
-/*   Updated: 2026/09/21 12:21:50 by adores           ###   ########.fr       */
+/*   Created: 2026/09/21 12:22:56 by adores            #+#    #+#             */
+/*   Updated: 2026/09/21 12:22:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
 #include <string>
 #include "AForm.hpp"
-#include <stdlib.h>
-#include <time.h>
 
-class RobotomyRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string _target;
 	public:
-		RobotomyRequestForm(std::string target);
-		~RobotomyRequestForm();
-		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
-		RobotomyRequestForm (const RobotomyRequestForm &other);
+		//PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
+		~PresidentialPardonForm();
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+		PresidentialPardonForm (const PresidentialPardonForm &other);
 		void writeForm() const;
 };
 
