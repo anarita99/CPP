@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 12:12:36 by adores            #+#    #+#             */
-/*   Updated: 2026/09/17 14:19:06 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/23 12:24:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ const char* Bureaucrat::GradeTooLowException::what() const _GLIBCXX_NOTHROW
 
 void Bureaucrat::signForm(Form &f)
 {
+	if(f.getIsSigned() == true)
+	{
+		std::cout << "The form is already signed." << std::endl;
+		return;
+	}
 	try
 	{
 		f.beSigned(*this);
