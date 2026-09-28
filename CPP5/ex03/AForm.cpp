@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:25:06 by adores            #+#    #+#             */
-/*   Updated: 2026/09/21 11:10:39 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/28 11:26:17 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ void AForm::beSigned(Bureaucrat &b)
 	else
 		throw GradeTooLowException();
 }
-
-//é suposto assinar quando está true?
 
 std::ostream &operator<<(std::ostream &out, const AForm &f)
 {

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:22:01 by adores            #+#    #+#             */
-/*   Updated: 2026/09/23 12:15:30 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/28 11:29:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AFo
 void RobotomyRequestForm::writeForm() const
 {
 	std::cout << "* DRILLING NOISES *" << std::endl;
-
 	if (rand() % 2 == 0)
 		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else

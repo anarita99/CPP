@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:21:33 by adores            #+#    #+#             */
-/*   Updated: 2026/09/21 12:21:36 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/28 11:29:15 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AFo
 void RobotomyRequestForm::writeForm() const
 {
 	std::cout << "* DRILLING NOISES *" << std::endl;
- 
-	//srand(time(NULL));
 	if (rand() % 2 == 0)
 		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else

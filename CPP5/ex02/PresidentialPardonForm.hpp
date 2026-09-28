@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:22:23 by adores            #+#    #+#             */
-/*   Updated: 2026/09/21 12:22:25 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/28 11:26:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class PresidentialPardonForm : public AForm
 	private:
 		std::string _target;
 	public:
-		//PresidentialPardonForm();
 		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm();
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);

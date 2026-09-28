@@ -6,17 +6,11 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 15:31:27 by adores            #+#    #+#             */
-/*   Updated: 2026/09/23 12:10:18 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/28 11:27:20 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-
-/*ShrubberyCreationForm::ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm::~ShrubberyCreationForm();
-		ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other);
-		ShrubberyCreationForm::ShrubberyCreationForm (const ShrubberyCreationForm &other);
-		void ShrubberyCreationForm::writeForm() const;*/
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("shrubbery", 145, 137), _target(target)
 {
