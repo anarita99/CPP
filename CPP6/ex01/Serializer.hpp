@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 14:10:35 by adores            #+#    #+#             */
-/*   Updated: 2026/09/28 15:42:28 by adores           ###   ########.fr       */
+/*   Created: 2026/09/28 14:38:10 by adores            #+#    #+#             */
+/*   Updated: 2026/09/28 14:50:03 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <cctype>
-#include <climits>
+#include <stdint.h>
 
-class ScalarConverter
+struct Data
 {
 	
+};
+
+class Serializer
+{
 	public:
-		ScalarConverter();
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter &other);
-		ScalarConverter &operator=(const ScalarConverter &other);
-		static void convert(std::string s);
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };
 
 #endif

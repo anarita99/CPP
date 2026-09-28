@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/28 11:50:57 by adores            #+#    #+#              #
-#    Updated: 2026/09/28 11:51:59 by adores           ###   ########.fr        #
+#    Created: 2026/09/28 14:36:54 by adores            #+#    #+#              #
+#    Updated: 2026/09/28 14:37:23 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = serialize
 CXX  = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main.cpp Serializer.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

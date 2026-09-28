@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 14:10:35 by adores            #+#    #+#             */
-/*   Updated: 2026/09/28 15:42:28 by adores           ###   ########.fr       */
+/*   Created: 2026/09/28 11:46:16 by adores            #+#    #+#             */
+/*   Updated: 2026/09/28 11:48:36 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#include "ScalarConverter.hpp"
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <cctype>
-#include <climits>
-
-class ScalarConverter
+int main(int ac, char **av)
 {
-	
-	public:
-		ScalarConverter();
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter &other);
-		ScalarConverter &operator=(const ScalarConverter &other);
-		static void convert(std::string s);
-};
-
-#endif
+	if (ac != 2)
+		return 1;
+	ScalarConverter::convert(av[1]);
+}
