@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:10:35 by adores            #+#    #+#             */
-/*   Updated: 2026/09/28 15:42:28 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/30 16:28:47 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <stdlib.h>
 #include <cctype>
 #include <climits>
+#include <iomanip>
+#include <sstream>
 
 class ScalarConverter
 {

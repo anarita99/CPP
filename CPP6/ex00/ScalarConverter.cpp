@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:13:59 by adores            #+#    #+#             */
-/*   Updated: 2026/09/30 12:56:00 by adores           ###   ########.fr       */
+/*   Updated: 2026/09/30 16:48:15 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void ScalarConverter::convert(std::string s)
 {
 		if (PseudoLiterals(s))
 			return ;
+
+		std::stringstream ss(s);
 		char *ptr = NULL;
 		long int li = std::strtol(s.c_str(), &ptr, 10);
 		//CHAR CHECK
@@ -96,10 +98,10 @@ void ScalarConverter::convert(std::string s)
 			else
 				std::cout << "char: " << static_cast<char>(li) << std::endl;
 		}
-		if (*ptr == 'f' && *(ptr + 1) == '\0')
-			ptr++;
+		/*if (*ptr == 'f' && *(ptr + 1) == '\0')
+			ptr++;*/
 		//INTEGERS CHECK
-		else if((*ptr != '\0' && *ptr != 'f')|| s == "\0")
+		if((*ptr != '\0' && *ptr != '.')|| s == "\0")
 			std::cout << "int: impossible" << std::endl;
 		else if (li < INT_MIN)
 			std::cout << "int: impossible" << std::endl;
@@ -109,6 +111,14 @@ void ScalarConverter::convert(std::string s)
 			std::cout << "int: " << li << std::endl;
 		
 		//FLOAT CHECK
+		float f;
+		if (ss >> f)
+		{
+			if (s.length() == 1)
+				std::cout << "float: " << f << ".0f" << std::endl;
+			else
+				std::cout << "float: " << std::setprecision(2)<< f << "f" << std::endl;
+		}
 		
 	}
 	// 222323a\0
