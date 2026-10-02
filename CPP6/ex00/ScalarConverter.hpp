@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:10:35 by adores            #+#    #+#             */
-/*   Updated: 2026/09/30 16:28:47 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/02 10:20:24 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <climits>
 #include <iomanip>
 #include <sstream>
+#include <cmath>
 
 class ScalarConverter
 {

@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:13:59 by adores            #+#    #+#             */
-/*   Updated: 2026/09/30 16:48:15 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/02 14:55:08 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,90 @@ int	PseudoLiterals(std::string s)
 	return 0;
 }
 
+int hasOneF(std::string s)
+{
+	bool hasF = false;
+	long unsigned int i = 0;
+
+	while(i < s.size())
+	{
+		if (s[i] == 'f')
+		{
+			if (hasF)
+				return 0;
+			hasF = true;
+		}
+		i++;
+	}
+	return 1;
+}
+
 void ScalarConverter::convert(std::string s)
+{
+		if (PseudoLiterals(s))
+			return ;
+		double d;
+		char *endptr;
+		d = std::strtod(s.c_str(), &endptr);
+		//CHAR CHECK
+		if (s.size() == 1 && isascii(s[0]) && !isdigit(s[0]))
+		{
+			std::cout << "char: " << static_cast<char>(s[0]) << std::endl;
+			std::cout << "int: " << static_cast<int>(s[0]) << std::endl;
+			std::cout << "float: " << static_cast<float>(s[0]) << ".0f" <<std::endl;
+			std::cout << "double: " << static_cast<double>(s[0]) << std::endl;
+			return ;
+		}
+		else 
+		{
+			if ((*endptr != '\0' && (!hasOneF(s) || *endptr != 'f')) || s.empty()) 
+				std::cout << "char: impossible" << std::endl;
+			else if (d < 0 || d > 127) 
+				std::cout << "char: impossible" << std::endl;
+			else if (!isprint(static_cast<int>(d)))
+				std::cout << "char: Non displayable" << std::endl;
+			else
+				std::cout << "char: '" << static_cast<char>(d) <<"'"<< std::endl;
+		}
+		//INTEGERS CHECK
+		
+		if((*endptr != '\0' && (!hasOneF(s) || *endptr != 'f') )|| s.empty()) 
+			std::cout << "int: impossible" << std::endl;
+		else if (d < INT_MIN || d > INT_MAX)
+			std::cout << "int: impossible" << std::endl;
+		else
+			std::cout << "int: " << static_cast<int>(d) << std::endl;
+		
+		//FLOAT CHECK
+		float f = static_cast<float>(d);
+		if((*endptr != '\0' && (!hasOneF(s) || *endptr != 'f') )|| s.empty()) 
+			std::cout << "float: impossible" << std::endl;
+		else if (std::fmod(d, 1.0) == 0.0 && d < 1000000.0 && d > -1000000.0)
+				std::cout << "float: " << f << ".0f" << std::endl;
+		else
+			std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+		
+		//DOUBLE CHECK
+		if((*endptr != '\0' && (!hasOneF(s) || *endptr != 'f') )|| s.empty()) 
+			std::cout << "double: impossible" << std::endl;
+		else if (std::fmod(d, 1.0) == 0.0 && d < 1000000.0 && d > -1000000.0)
+				std::cout << "double: " << d << ".0" << std::endl;
+		else
+			std::cout << "double: " << d << std::endl;
+		
+		}
+
+
+
+
+
+
+
+
+
+
+
+/*void ScalarConverter::convert(std::string s)
 {
 		if (PseudoLiterals(s))
 			return ;
@@ -91,17 +174,15 @@ void ScalarConverter::convert(std::string s)
 		}
 		else 
 		{
-			if (*ptr != '\0') 
+			if ((*ptr != '\0' && *ptr != '.')|| s == "\0") 
 				std::cout << "char: impossible" << std::endl;
 			else if (!isprint(li))
 				std::cout << "char: Non displayable" << std::endl;
 			else
 				std::cout << "char: " << static_cast<char>(li) << std::endl;
 		}
-		/*if (*ptr == 'f' && *(ptr + 1) == '\0')
-			ptr++;*/
 		//INTEGERS CHECK
-		if((*ptr != '\0' && *ptr != '.')|| s == "\0")
+		if(((*ptr != '\0' && *ptr != '.')|| s.empty()) && !isValidFloat(s))
 			std::cout << "int: impossible" << std::endl;
 		else if (li < INT_MIN)
 			std::cout << "int: impossible" << std::endl;
@@ -112,15 +193,14 @@ void ScalarConverter::convert(std::string s)
 		
 		//FLOAT CHECK
 		float f;
-		if (ss >> f)
-		{
-			if (s.length() == 1)
+		char *ptr2;
+		f = std::strtod(s.c_str(), &ptr2);
+		std::cout << "float: " << f << std::endl;
+		if (std::fmod(f, 1.0) == 0.0)
 				std::cout << "float: " << f << ".0f" << std::endl;
-			else
-				std::cout << "float: " << std::setprecision(2)<< f << "f" << std::endl;
+		else
+			std::cout << "float: " << std::fixed << std::setprecision(2)<< f << "f" << std::endl;
 		}
-		
-	}
-	// 222323a\0
+*/
 
 

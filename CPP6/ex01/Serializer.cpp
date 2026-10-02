@@ -3,10 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:37:37 by adores            #+#    #+#             */
-/*   Updated: 2026/09/28 14:37:38 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/01 14:24:41 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Serializer.hpp"
 
