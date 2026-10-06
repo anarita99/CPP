@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:13:59 by adores            #+#    #+#             */
-/*   Updated: 2026/10/02 14:58:12 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/06 13:57:21 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,8 +141,7 @@ void ScalarConverter::convert(std::string s)
 		else if (std::fmod(d, 1.0) == 0.0 && d < 1000000.0 && d > -1000000.0)
 				std::cout << "double: " << d << ".0" << std::endl;
 		else
-			std::cout << "double: " << d << std::endl;
-		
+			std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 		}
 
 

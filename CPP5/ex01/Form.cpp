@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 13:25:06 by adores            #+#    #+#             */
-/*   Updated: 2026/09/23 12:24:22 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/06 11:15:00 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,6 @@ void Form::beSigned(Bureaucrat &b)
 	else
 		throw GradeTooLowException();
 }
-
-//é suposto assinar quando está true?
 
 std::ostream &operator<<(std::ostream &out, const Form &f)
 {

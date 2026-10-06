@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adores <adores@student.42.fr>              +#+  +:+       +#+         #
+#    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/24 12:26:21 by adores            #+#    #+#              #
-#    Updated: 2026/08/24 12:28:58 by adores           ###   ########.fr        #
+#    Updated: 2026/10/06 11:04:23 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADERS = $(wildcard *.hpp)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -MMD -MP $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS): $(HEADERS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

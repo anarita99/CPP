@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/28 14:36:54 by adores            #+#    #+#              #
-#    Updated: 2026/09/28 14:37:23 by adores           ###   ########.fr        #
+#    Updated: 2026/10/06 14:39:33 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Serializer.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADERS = $(wildcard *.hpp)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -MMD -MP $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS): $(HEADERS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

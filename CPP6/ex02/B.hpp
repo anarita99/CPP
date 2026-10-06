@@ -1,32 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 14:38:10 by adores            #+#    #+#             */
-/*   Updated: 2026/10/06 15:05:38 by adores           ###   ########.fr       */
+/*   Created: 2026/10/06 15:34:19 by adores            #+#    #+#             */
+/*   Updated: 2026/10/06 15:34:20 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
-
-#include "Data.hpp"
-#include <stdint.h>
-#include <iostream>
-
-class Serializer
-{
-	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-	private:
-		Serializer();
-		~Serializer();
-		Serializer(const Serializer &other);
-		Serializer &operator=(const Serializer &other);
-};
-
-#endif

@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/28 11:50:57 by adores            #+#    #+#              #
-#    Updated: 2026/09/28 11:51:59 by adores           ###   ########.fr        #
+#    Updated: 2026/10/06 14:38:49 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp ScalarConverter.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADERS = $(wildcard *.hpp)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -MMD -MP $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS): $(HEADERS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

@@ -17,11 +17,14 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
 		ShrubberyCreationForm.cpp
 OBJS = $(SRCS:.cpp=.o)
+HEADERS = $(wildcard *.hpp)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -MMD -MP $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJS): $(HEADERS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

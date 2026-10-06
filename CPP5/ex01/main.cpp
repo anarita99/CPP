@@ -6,11 +6,10 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 14:23:47 by adores            #+#    #+#             */
-/*   Updated: 2026/09/23 12:19:52 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/06 11:18:07 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
  
