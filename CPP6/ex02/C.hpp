@@ -6,7 +6,18 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 15:34:12 by adores            #+#    #+#             */
-/*   Updated: 2026/10/06 15:34:13 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/07 11:49:13 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef C_HPP
+#define C_HPP
+
+#include "Base.hpp"
+
+class C : public Base
+{
+	
+};
+
+#endif
