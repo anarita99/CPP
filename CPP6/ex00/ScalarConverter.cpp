@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 14:13:59 by adores            #+#    #+#             */
-/*   Updated: 2026/10/08 14:20:24 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/22 12:13:23 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,55 +143,3 @@ void ScalarConverter::convert(std::string s)
 		else
 			std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 		}
-
-
-
-/*void ScalarConverter::convert(std::string s)
-{
-		if (PseudoLiterals(s))
-			return ;
-
-		std::stringstream ss(s);
-		char *ptr = NULL;
-		long int li = std::strtol(s.c_str(), &ptr, 10);
-		//CHAR CHECK
-		if (s.size() == 1 && isascii(s[0]) && !isdigit(s[0]))
-		{
-			std::cout << "char: " << static_cast<char>(s[0]) << std::endl;
-			std::cout << "int: " << static_cast<int>(s[0]) << std::endl;
-			std::cout << "float: " << static_cast<float>(s[0]) << ".0f" <<std::endl;
-			std::cout << "double: " << static_cast<double>(s[0]) << std::endl;
-			return ;
-		}
-		else 
-		{
-			if ((*ptr != '\0' && *ptr != '.')|| s == "\0") 
-				std::cout << "char: impossible" << std::endl;
-			else if (!isprint(li))
-				std::cout << "char: Non displayable" << std::endl;
-			else
-				std::cout << "char: " << static_cast<char>(li) << std::endl;
-		}
-		//INTEGERS CHECK
-		if(((*ptr != '\0' && *ptr != '.')|| s.empty()) && !isValidFloat(s))
-			std::cout << "int: impossible" << std::endl;
-		else if (li < INT_MIN)
-			std::cout << "int: impossible" << std::endl;
-		else if(li > INT_MAX)
-			std::cout << "int: impossible" << std::endl;
-		else
-			std::cout << "int: " << li << std::endl;
-		
-		//FLOAT CHECK
-		float f;
-		char *ptr2;
-		f = std::strtod(s.c_str(), &ptr2);
-		std::cout << "float: " << f << std::endl;
-		if (std::fmod(f, 1.0) == 0.0)
-				std::cout << "float: " << f << ".0f" << std::endl;
-		else
-			std::cout << "float: " << std::fixed << std::setprecision(2)<< f << "f" << std::endl;
-		}
-*/
-
-
