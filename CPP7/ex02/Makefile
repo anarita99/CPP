@@ -6,12 +6,12 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/22 15:19:36 by adores            #+#    #+#              #
-#    Updated: 2026/10/22 15:19:39 by adores           ###   ########.fr        #
+#    Updated: 2026/10/26 11:22:09 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = iter
+NAME = array
 CXX  = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

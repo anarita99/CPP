@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 13:50:54 by adores            #+#    #+#             */
-/*   Updated: 2026/10/23 14:39:47 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/26 15:05:19 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ class Array
 		~Array();
 		Array &operator=(const Array &other);
 		T &operator[](unsigned int u);
+		const T &operator[](unsigned int u) const;
 		Array(const Array &other);
 		unsigned int size() const;
 		class OutOfRangeExcep : public std::exception{
-			virtual const char* what() const _GLIBCXX_NOTHROW;
+			virtual const char* what() const throw();
 		};
 };
 
