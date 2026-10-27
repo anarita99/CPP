@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 14:57:06 by adores            #+#    #+#             */
-/*   Updated: 2026/10/26 15:07:03 by adores           ###   ########.fr       */
+/*   Updated: 2026/10/27 12:33:56 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,28 @@
 #define EASYFIND_HPP
 
 #include <algorithm>
+#include <exception>
 
-template <typename T, int i>
-class easyfind
+class ErrNotFound : public std::exception
 {
 	public:
-		easyfind();
-		~easyfind();
-		easyfind &operator=(const easyfind &other);
-		easyfind(const easyfind &other);
-		class NotFoundExcep : public std::exception{
-			virtual const char* what() const throw();
-		};
+		virtual const char* what() const throw()
+		{
+			return "Couldn't find number in container.";
+		}
+		
 };
 
-#include "easyfind.hpp"
+template<typename T>
+typename T::iterator easyfind(T& intcont, int num)
+{
+	typename T::iterator it;
+	it = std::find(intcont.begin(), intcont.end(), num);
+	if (it != intcont.end())
+		return it;
+	else
+		throw ErrNotFound();
+}
+
 
 #endif
