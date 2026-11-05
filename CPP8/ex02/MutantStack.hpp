@@ -3,29 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 14:05:31 by adores            #+#    #+#             */
-/*   Updated: 2026/11/04 14:48:39 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/05 16:17:57 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
-#define MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 #include <stack>
+#include <deque>
 #include <iostream>
 
-template <typename T>
-class MutantStack : public std::stack<T>
+template <typename T, typename Container = std::deque<T> >
+class MutantStack : public std::stack<T,Container>
 {
 	public:
-		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		typedef typename Container::iterator iterator;
+		typedef typename Container::const_iterator const_iterator;
+		typedef typename Container::reverse_iterator reverse_iterator;
+		typedef typename Container::const_reverse_iterator const_reverse_iterator
+		
 		MutantStack(){}
 		~MutantStack(){}
-		MutantStack &operator=(const MutantStack &other);
-		MutantStack(const MutantStack &other);
+		MutantStack &operator=(const MutantStack &other)
+		{
+			if(this != &other)
+				this->c = other.c;
+			return *this;
+		}
+		MutantStack(const MutantStack &other) : std::stack<T, Container>(other)
+		{
+			
+		}
 		iterator begin(){
 			return this->c.begin();
 		}
@@ -38,7 +50,18 @@ class MutantStack : public std::stack<T>
 		const_iterator end() const{
 			return this->c.end();
 		}
-		
+		reverse_iterator rbegin(){
+			return this->c.rbegin();
+		}
+		reverse_iterator rend(){
+			return this->c.rend();
+		}
+		const_reverse_iterator rbegin() const{
+			return this->c.rbegin();
+		}
+		const_reverse_iterator rend() const{
+			return this->c.rend();
+		}
 };
 
 #endif

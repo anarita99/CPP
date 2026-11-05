@@ -6,22 +6,20 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:25:03 by adores            #+#    #+#             */
-/*   Updated: 2026/10/26 14:26:26 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/05 11:10:35 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename T>
-Array<T>::Array()
+Array<T>::Array() : _arr(NULL), _size(0)
 {
-	_arr = NULL;
-	_size = 0;
-};
+}
 
 template <typename T>
 Array<T>::~Array()
 {
 	delete [] _arr;
-};
+}
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _arr(new T[n]()) , _size(n)
