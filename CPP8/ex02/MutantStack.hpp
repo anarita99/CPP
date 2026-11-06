@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 14:05:31 by adores            #+#    #+#             */
-/*   Updated: 2026/11/05 16:17:57 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/06 10:09:25 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <stack>
 #include <deque>
-#include <iostream>
 
 template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T,Container>
@@ -24,7 +23,7 @@ class MutantStack : public std::stack<T,Container>
 		typedef typename Container::iterator iterator;
 		typedef typename Container::const_iterator const_iterator;
 		typedef typename Container::reverse_iterator reverse_iterator;
-		typedef typename Container::const_reverse_iterator const_reverse_iterator
+		typedef typename Container::const_reverse_iterator const_reverse_iterator;
 		
 		MutantStack(){}
 		~MutantStack(){}
