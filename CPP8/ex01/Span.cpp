@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 14:25:53 by adores            #+#    #+#             */
-/*   Updated: 2026/10/30 09:59:33 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/10 10:28:42 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ unsigned int Span::longestSpan()
 {
 	if (_vec.size() == 0 || _vec.size() == 1)
 		throw NotEnoughNum();
-	std::vector<int>::iterator result;
 	int max_value = *std::max_element(_vec.begin(), _vec.end());
 	int min_value = *std::min_element(_vec.begin(), _vec.end());
 	int res = max_value - min_value;
