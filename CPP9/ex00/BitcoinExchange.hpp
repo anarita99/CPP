@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 11:54:55 by adores            #+#    #+#             */
-/*   Updated: 2026/11/13 16:21:29 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/17 17:05:27 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <fstream>
 #include <sstream>
 #include <cctype>
+#include <cstdlib>
 
 class BitcoinExchange
 {
@@ -32,6 +33,7 @@ class BitcoinExchange
 		int loadDatabase();
 		int processInput(const std::string &filename);
 		void printDatabase();
+		float searchData(std::string &date);
 };
 
 #endif

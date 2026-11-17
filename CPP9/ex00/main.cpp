@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:42:54 by adores            #+#    #+#             */
-/*   Updated: 2026/11/13 09:42:49 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/17 14:37:30 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	}
 	BitcoinExchange bit;
 	bit.loadDatabase();
-	bit.printDatabase();
+	//bit.printDatabase();
 	bit.processInput(av[1]);
 	
 }
