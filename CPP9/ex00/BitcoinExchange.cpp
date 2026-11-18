@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 12:03:49 by adores            #+#    #+#             */
-/*   Updated: 2026/11/17 17:06:31 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/18 15:38:40 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ BitcoinExchange::~BitcoinExchange()
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
 {
-	(void)other;
+	*this = other;
 }
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &other)
@@ -36,10 +36,12 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &other)
 
 bool isLeapYear(int year)
 {
-	if (year % 400 == 0 || year % 4 == 0)
+	if (year % 400 == 0)
 		return true;
 	else if (year % 100 == 0)
 		return false;
+	else if(year % 4 == 0)
+		return true;
 	else
 		return false;
 
@@ -53,9 +55,13 @@ bool validDate(std::string &date)
 		return false;
 	if (date[4] != '-' || date[7] != '-')
 		return false;
-	std::size_t found = date.find_first_not_of("-0123456789");
-	if (found !=std::string::npos)
-	 	return false;
+	for(int i = 0; date[i]; i++)
+	{
+		if(i == 4 || i == 7)
+			continue;
+		if(!isdigit(date[i]))
+			return false;
+	}
 	std::string year = date.substr (0, 4);
 	std::string month = date.substr(5,2);
 	std::string day = date.substr(8,2);
@@ -76,7 +82,7 @@ bool validDate(std::string &date)
 		return false;
 	if((m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) && (d > 31 || d <= 0))
 		return false;
-	else if ((m == 4 || m == 6 || m == 9 || m == 11) && (d <= 0 || d >= 30))
+	else if ((m == 4 || m == 6 || m == 9 || m == 11) && (d <= 0 || d > 30))
 		return false;
 	
 	if (y <= 0 || y > 9999)
@@ -98,7 +104,10 @@ int BitcoinExchange::loadDatabase()
 	std::string firstLine;
 	getline(myFile, firstLine);
 	if (firstLine != "date,exchange_rate")
+	{
+		std::cout << "Error: wrong format" << std::endl;
 		return (myFile.close(), 0);
+	}
 	while (getline (myFile, line))
 	{
 		std::size_t pos = line.find(",");
@@ -138,10 +147,19 @@ static bool validValue(float value)
 
 float BitcoinExchange::searchData(std::string &date)
 {
+	if(nums.empty())
+		return -2;
 	std::map<std::string, float>::iterator it = nums.lower_bound(date);
+	
 	if (it != nums.end() && it-> first == date)
 		return (it->second);
-
+	else if (it == nums.begin() && it-> first != date)
+		return -1;
+	else
+	{
+		--it;
+		return(it->second);
+	}
 
 }
 
@@ -150,7 +168,7 @@ int BitcoinExchange::processInput(const std::string &filename)
 	std::string line;
 	std::ifstream inputFile(filename.c_str());
 	if (!inputFile.is_open()){
-		std::cout << "Error: couldn't open input file" << std::endl;
+		std::cout << "Error: could not open file." << std::endl;
 		return 0;
 	}
 	std::string firstLine;
@@ -184,9 +202,19 @@ int BitcoinExchange::processInput(const std::string &filename)
 		if (!validValue(value))
 			continue;
 		float rate = searchData(date);
-		if (searchData(date))
+		if(rate == -2)
 		{
-			std::cout << date <<" => "<< value <<" = "<< rate <<std::endl;
+			std::cout << "Error: no numbers to analyze." << line << std::endl;
+			continue;
+		}
+		else if (rate == -1)
+		{
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+		else if (rate != -1 && rate != -2)
+		{
+			std::cout << date <<" => "<< value <<" = "<< rate * value <<std::endl;
 			continue;
 		}
 	}

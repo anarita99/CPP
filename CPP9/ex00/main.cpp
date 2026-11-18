@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:42:54 by adores            #+#    #+#             */
-/*   Updated: 2026/11/17 14:37:30 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/18 15:38:22 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int main(int ac, char **av)
 {
 	if(ac != 2)
 	{
-		std::cout << "Error: Wrong number of arguments" << std::endl;
+		std::cout << "Error: Error: could not open file." << std::endl;
 		return 1;
 	}
 	BitcoinExchange bit;
-	bit.loadDatabase();
+	if(!bit.loadDatabase())
+		return 1;
 	//bit.printDatabase();
 	bit.processInput(av[1]);
-	
+	return 0;
 }
