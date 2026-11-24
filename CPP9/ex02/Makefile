@@ -6,7 +6,7 @@
 #    By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/19 10:46:28 by adores            #+#    #+#              #
-#    Updated: 2026/11/19 10:47:37 by adores           ###   ########.fr        #
+#    Updated: 2026/11/24 14:47:20 by adores           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = PmergeMe
 CXX  = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp RPN.cpp
+SRCS = main.cpp PmergeMe.cpp
 OBJS = $(SRCS:.cpp=.o)
 HEADERS = $(wildcard *.hpp)
 
