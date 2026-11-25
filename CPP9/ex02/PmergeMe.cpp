@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 10:46:31 by adores            #+#    #+#             */
-/*   Updated: 2026/11/24 15:00:01 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/25 16:05:03 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,34 @@ bool PmergeMe::validateNums(int ac, char **av)
 	std::cout << "Before: ";
 	for (unsigned long i = 0; i < nums.size(); i++)
 		std::cout << nums[i] << " ";
+	std::cout << std::endl;
 	return true;
+}
+
+//winners no first e losers no second sempre
+std::vector<int> PmergeMe::sortVec(std::vector<int> &nums)
+{
+	std::cout << nums.size() << std::endl;
+	if (nums.size() <= 1)
+		return nums;
+
+	std::vector< std::pair<int,int> >pairs;
+	std::vector<int> winners;
+	
+	size_t size = nums.size();
+	for (size_t i = 0; i + 1 < size; i+= 2)
+	{
+		if(nums[i] > nums[i + 1])
+			pairs.push_back(std::make_pair(nums[i], nums[i + 1]));
+		else
+			pairs.push_back(std::make_pair(nums[i + 1], nums[i]));
+	}
+	bool hasStraggler = (size % 2 != 0);
+	int straggler = 0;
+	if (hasStraggler)
+		straggler = nums[size - 1];
+	for (unsigned long i = 0; i < pairs.size(); i++)
+		winners.push_back(pairs[i].first);
+	winners = sortVec(winners);
+	return nums;
 }
