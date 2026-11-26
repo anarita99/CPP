@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 10:46:31 by adores            #+#    #+#             */
-/*   Updated: 2026/11/25 16:05:03 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/26 15:55:42 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,21 @@ bool PmergeMe::validateNums(int ac, char **av)
 	return true;
 }
 
+size_t PmergeMe::binarySearch(const std::vector<int> &v, int value, size_t high)
+{
+	size_t low = 0;
+	while(low < high)
+	{
+		size_t mid = low + (high - low) / 2;
+		if (value < v[mid])
+			high = mid;
+		else
+			low = mid + 1;
+	}
+	return low;
+}
+
+
 //winners no first e losers no second sempre
 std::vector<int> PmergeMe::sortVec(std::vector<int> &nums)
 {
@@ -94,4 +109,19 @@ std::vector<int> PmergeMe::sortVec(std::vector<int> &nums)
 		winners.push_back(pairs[i].first);
 	winners = sortVec(winners);
 	return nums;
+}
+
+std::vector<int> PmergeMe::jacobsthalOrder(size_t N)
+{
+	std::vector<int> order;
+	size_t before = 1;
+	size_t now = 2;
+	while(before < N)
+	{
+		size_t lim;
+		if(now < N)
+			lim = now;
+		else
+			lim = before;
+	}
 }

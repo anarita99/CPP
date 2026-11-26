@@ -6,7 +6,7 @@
 /*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 10:46:37 by adores            #+#    #+#             */
-/*   Updated: 2026/11/25 16:02:28 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/26 15:50:10 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class PmergeMe
 		PmergeMe &operator=(const PmergeMe &other);
 		bool validateNums(int ac, char **av);
 		std::vector<int> sortVec(std::vector<int> &nums);
+		size_t binarySearch(const std::vector<int> &v, int value, size_t high);
+		std::vector<int> jacobsthalOrder(size_t N);
 };
 
 #endif
