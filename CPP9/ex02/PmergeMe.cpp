@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adores <adores@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: adores <adores@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 10:46:31 by adores            #+#    #+#             */
-/*   Updated: 2026/11/26 15:55:42 by adores           ###   ########.fr       */
+/*   Updated: 2026/11/27 13:00:50 by adores           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,17 +111,28 @@ std::vector<int> PmergeMe::sortVec(std::vector<int> &nums)
 	return nums;
 }
 
+//último + 2 × penúltimo
+//por que ordem vamos ordenar os bs
 std::vector<int> PmergeMe::jacobsthalOrder(size_t N)
 {
+	std::vector<size_t> jac;
 	std::vector<int> order;
-	size_t before = 1;
-	size_t now = 2;
-	while(before < N)
+	
+	jac.push_back(1);
+	jac.push_back(3);
+
+	while(jac.back() < N)
 	{
-		size_t lim;
-		if(now < N)
-			lim = now;
-		else
-			lim = before;
+		size_t k = jac.size();
+		jac.push_back(jac[k - 1] + 2 * jac[k - 2]);
 	}
+	for (size_t k = 1; k < jac.size(); k++)
+	{
+		size_t top = jac[k];
+		if (top > N)
+			top = N;
+		for (size_t i = top; i > jac[k - 1]; i--)
+			order.push_back(i);
+	}
+	return order;
 }
